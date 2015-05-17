@@ -53,8 +53,8 @@ public class GameScene extends CCLayer {
 
         CCSprite ccSprite = CCSprite.sprite("Player.png");
         ccMacros.CCLOG("GameScene", "Width=" + CCDirector.sharedDirector().winSize().getWidth() + ", Height=" + CCDirector.sharedDirector().winSize().getHeight());
-        ccSprite.setPosition(CCDirector.sharedDirector().winSize().getWidth() / 2, CCDirector.sharedDirector().winSize().getHeight() / 2);
-        ccSprite.setScale(5f);
+        ccSprite.setPosition(ccSprite.getContentSize().width/2, CCDirector.sharedDirector().winSize().getHeight() / 2);
+        //ccSprite.setScale(5f);
 
         this.schedule("gameLogic", 1.0f);
         this.schedule("update");
@@ -74,7 +74,7 @@ public class GameScene extends CCLayer {
         CGPoint location = CCDirector.sharedDirector().convertToGL(CGPoint.ccp(event.getX(), event.getY()));
 
         // Set up initial location of projectile
-        CGSize winSize = CCDirector.sharedDirector().displaySize();
+        CGSize winSize = CCDirector.sharedDirector().winSize();
         CCSprite projectile = CCSprite.sprite("Projectile.png");
         projectile.setTag(2);
         _projectiles.add(projectile);

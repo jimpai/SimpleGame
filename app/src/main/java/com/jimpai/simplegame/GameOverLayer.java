@@ -39,7 +39,7 @@ public class GameOverLayer extends CCColorLayer {
         super(color);
         this.setIsTouchEnabled(true);
 
-        CGSize winSize = CCDirector.sharedDirector().displaySize();
+        CGSize winSize = CCDirector.sharedDirector().winSize();
 
         _label = CCLabel.makeLabel("Won't See Me", "DroidSans", 32);
         _label.setColor(ccColor3B.ccBLACK);
